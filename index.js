@@ -5,7 +5,7 @@ const server = serve({ port: PORT });
 console.log(`HTTP webserver running.  Access it at:  http://localhost:${PORT}/`);
 
 for await (const request of server) {
-  let bodyContent = "Your user-agent is:\n\n";
+  let bodyContent = "<h1>Example App</h1>\n\nYour user-agent is:\n\n";
   bodyContent += request.headers.get("user-agent") || "Unknown";
 
   request.respond({ status: 200, body: bodyContent });
